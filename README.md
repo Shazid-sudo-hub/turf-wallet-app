@@ -4,7 +4,8 @@ A simple Streamlit app for managing wallet balances of turf players.
 
 ## Why I Made This
 
-In our football turf group, different players join on different days, so it becomes difficult to calculate each player's share manually every time.  
+In our football turf group, different players join on different days, so it becomes difficult to calculate each player's share manually every time.
+
 This app helps keep track of player balances and makes daily turf cost deduction easier.
 
 ## Features
@@ -27,3 +28,21 @@ First install the required libraries:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Then run the app:
+
+```bash
+streamlit run wallet_app.py
+```
+
+## Tools Used
+
+- Python
+- Streamlit
+- Pandas
+- CSV file
+
+## Project Note
+
+This is a simple practical project made to manage turf player wallet balances and reduce manual calculation.
