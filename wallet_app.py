@@ -1,3 +1,4 @@
+import base64
 import os
 import pandas as pd
 import streamlit as st
@@ -8,78 +9,75 @@ st.set_page_config(
     page_icon="⚽",
     layout="centered"
 )
+def get_base64_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode()
 
+bg_image = get_base64_image("app_bc.jpg")
 # ---------------- Custom Design ----------------
-st.markdown("""
+st.markdown(f"""
 <style>
-.stApp {
+.stApp {{
     background:
-        linear-gradient(rgba(0, 40, 20, 0.88), rgba(0, 20, 10, 0.92)),
-        repeating-linear-gradient(
-            90deg,
-            #0b6b3a 0px,
-            #0b6b3a 80px,
-            #0f7d45 80px,
-            #0f7d45 160px
-        );
+        linear-gradient(rgba(0, 20, 10, 0.78), rgba(0, 20, 10, 0.88)),
+        url("data:image/jpg;base64,{bg_image}");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
-}
+}}
 
-.block-container {
+.block-container {{
     padding-top: 2rem;
     max-width: 850px;
-}
+}}
 
-.main-card {
-    background: rgba(0, 0, 0, 0.45);
+.main-card {{
+    background: rgba(0, 0, 0, 0.62);
     padding: 25px;
     border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0px 8px 25px rgba(0,0,0,0.35);
-}
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.45);
+}}
 
-.title {
+.title {{
     font-size: 42px;
     font-weight: 800;
     text-align: center;
     margin-bottom: 5px;
-}
+}}
 
-.subtitle {
+.subtitle {{
     text-align: center;
     font-size: 16px;
     color: #d6d6d6;
     margin-bottom: 25px;
-}
+}}
 
-.section-title {
+.section-title {{
     font-size: 24px;
     font-weight: 700;
     margin-top: 25px;
     margin-bottom: 10px;
-}
+}}
 
-.stButton > button {
+.stButton > button {{
     background-color: #12a150;
     color: white;
     border-radius: 10px;
     border: none;
     font-weight: 700;
     padding: 0.6rem 1rem;
-}
+}}
 
-.stButton > button:hover {
+.stButton > button:hover {{
     background-color: #0e7f3f;
     color: white;
-}
+}}
 
-[data-testid="stMetricValue"] {
-    color: #ffffff;
-}
-
-hr {
+hr {{
     border: 1px solid rgba(255,255,255,0.15);
-}
+}}
 </style>
 """, unsafe_allow_html=True)
 
