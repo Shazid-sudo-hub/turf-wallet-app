@@ -19,7 +19,7 @@ st.markdown(f"""
 <style>
 .stApp {{
     background:
-        linear-gradient(rgba(0, 20, 10, 0.78), rgba(0, 20, 10, 0.88)),
+        linear-gradient(rgba(0, 20, 10, 0.60), rgba(0, 20, 10, 0.72)),
         url("data:image/jpg;base64,{bg_image}");
     background-size: cover;
     background-position: center;
